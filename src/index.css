@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer components {
+  .text-align {
+    @apply w-full max-w-7xl px-4 mx-auto;
+  }
+}
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+}
