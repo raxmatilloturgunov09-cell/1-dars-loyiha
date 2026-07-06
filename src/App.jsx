@@ -8,9 +8,10 @@ import Home from "./pages/public/Home";
 import Posts from "./pages/public/Posts";
 import PostDetail from "./pages/public/PostDetail";
 import CreatPosts from "./pages/admin/CreatPosts";
+// import Dashboard from "./pages/admin/Dashboard";
 import Dashboard from "./pages/admin/Dashboard";
 import UpdatePosts from "./pages/admin/UpdatePosts";
-import Login from "./components/Login";
+import Login from "../src/pages/auth/Login";
 import ErrorPage from "./pages/public/ErrorPage";
 
 function App() {

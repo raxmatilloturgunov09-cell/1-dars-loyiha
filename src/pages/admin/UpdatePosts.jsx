@@ -1,7 +1,7 @@
 import React from "react";
 
 function UpdatePosts() {
-  return <div></div>;
+  return <div>UpdatePosts</div>;
 }
 
 export default UpdatePosts;

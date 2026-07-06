@@ -1,7 +1,13 @@
-import React from "react";
+import { Outlet } from "react-router-dom";
+import AdminBar from "../components/AdminBar";
 
-function AdminLayout() {
-  return <div>Admin </div>;
+function Admin() {
+  return (
+    <div className="flex">
+      <AdminBar />
+      <Outlet />
+    </div>
+  );
 }
 
-export default AdminLayout;
+export default Admin;
