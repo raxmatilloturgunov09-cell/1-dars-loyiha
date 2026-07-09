@@ -8,7 +8,7 @@ import Home from "./pages/public/Home";
 import Posts from "./pages/public/Posts";
 import PostDetail from "./pages/public/PostDetail";
 import CreatPosts from "./pages/admin/CreatPosts";
-// import Dashboard from "./pages/admin/Dashboard";
+
 import Dashboard from "./pages/admin/Dashboard";
 import UpdatePosts from "./pages/admin/UpdatePosts";
 import Login from "../src/pages/auth/Login";
@@ -53,6 +53,26 @@ function App() {
       ],
     },
 
+    // {
+    //   path: "/admin",
+    //   element: <AdminLayout />,
+    //   children: [
+    //     {
+    //       index: true,
+    //       element: <Dashboard />,
+    //     },
+    //     {
+    //       path: "createposts",
+    //       element: <CreatPosts />,
+    //     },
+
+    //     {
+    //       path: "update",
+    //       element: <UpdatePosts />,
+    //     },
+    //   ],
+    // },
+
     {
       path: "/admin",
       element: <AdminLayout />,
@@ -62,13 +82,12 @@ function App() {
           element: <Dashboard />,
         },
         {
-          path: "createposts",
-          element: <CreatPosts />,
-        },
-
-        {
           path: "update",
           element: <UpdatePosts />,
+        },
+        {
+          path: "createposts",
+          element: <CreatPosts />,
         },
       ],
     },
