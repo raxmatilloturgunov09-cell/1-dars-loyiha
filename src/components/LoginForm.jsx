@@ -33,7 +33,6 @@ function LoginForm() {
       localStorage.setItem("access", data.data.access);
       localStorage.setItem("refresh", data.data.refresh);
 
-      // SENING ROUTINGINGGA MOS
       navigate("/admin");
     } catch (error) {
       toast.error(error.message || "Login xato!");

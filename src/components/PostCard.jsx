@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // ⚠️ Link-ni import qilamiz
+import { Link } from "react-router-dom";
 
 function PostCard({ card }) {
   const categoryStyles = {
@@ -12,7 +12,6 @@ function PostCard({ card }) {
 
   return (
     <div className="border border-[#E5E7EB] rounded-6 overflow-hidden flex flex-col h-full bg-white transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2 group rounded-xl">
-      {/* Rasm va Kategoriya qismi */}
       <div className="relative pt-[56.25%] overflow-hidden bg-gray-100">
         <img
           src={card.image}
@@ -26,7 +25,6 @@ function PostCard({ card }) {
         </span>
       </div>
 
-      {/* Kontent qismi */}
       <div className="p-6 flex flex-col grow">
         <div className="flex items-center gap-2 text-[#6B7280] text-[14px] font-medium mb-3">
           <svg
@@ -56,7 +54,7 @@ function PostCard({ card }) {
 
         <div className="mt-auto">
           <Link
-            to={`/posts/${card.id}`} // Dinamik ID manzilga uzatiladi
+            to={`/posts/${card.id}`}
             className="text-[#4F46E5] hover:text-[#3730A3] font-semibold text-[15px] inline-flex items-center gap-2 transition-colors duration-200 group/link"
           >
             Read more

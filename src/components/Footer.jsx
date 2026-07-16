@@ -17,7 +17,7 @@ function Footer() {
             </p>
           </div>
 
-          {/* 2-ustun: Quick Links */}
+  
           <div className="flex flex-col gap-4 md:pl-16">
             <h3 className="font-inter font-semibold text-2xl leading-8 align-middle">
               Quick Links
@@ -82,7 +82,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Pastki qism: Chiziq va Mualliflik huquqi */}
         <div className="border-t border-gray-100 pt-8 text-center text-xs text-gray-400 font-medium">
           <p>© {new Date().getFullYear()} Blogify. All rights reserved.</p>
         </div>

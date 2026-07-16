@@ -1,5 +1,4 @@
 import React from "react";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PublicLayout from "./layouts/PublicLayout";
 import AdminLayout from "./layouts/AdminLayout";
@@ -52,27 +51,6 @@ function App() {
         },
       ],
     },
-
-    // {
-    //   path: "/admin",
-    //   element: <AdminLayout />,
-    //   children: [
-    //     {
-    //       index: true,
-    //       element: <Dashboard />,
-    //     },
-    //     {
-    //       path: "createposts",
-    //       element: <CreatPosts />,
-    //     },
-
-    //     {
-    //       path: "update",
-    //       element: <UpdatePosts />,
-    //     },
-    //   ],
-    // },
-
     {
       path: "/admin",
       element: <AdminLayout />,

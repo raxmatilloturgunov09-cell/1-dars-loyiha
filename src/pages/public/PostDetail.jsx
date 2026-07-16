@@ -4,12 +4,10 @@ import { cardsData } from "../../data/cardsData.js";
 import PostCard from "../../components/PostCard";
 
 function PostDetail() {
-  const { id } = useParams(); // URL'dan dinamik ID'ni olamiz
+  const { id } = useParams();
 
-  // ID bo'yicha joriy postni topamiz
   const post = cardsData.find((item) => item.id === parseInt(id));
 
-  // Agar post topilmasa, 404 dizayni
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
@@ -29,12 +27,10 @@ function PostDetail() {
     );
   }
 
-  // "Related Posts" uchun joriy postdan boshqa (maksimal 2 ta) maqolani filter qilamiz
   const relatedPosts = cardsData
     .filter((item) => item.id !== post.id)
     .slice(0, 2);
 
-  // Kategoriya ranglari
   const categoryStyles = {
     Technology: "bg-blue-100 text-blue-800",
     Productivity: "bg-indigo-100 text-indigo-800",
@@ -43,9 +39,7 @@ function PostDetail() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* 1. Asosiy maqola konteyneri */}
       <div className="max-w-200 mx-auto px-6 pt-12 pb-16">
-        {/* Orqaga qaytish havolasi */}
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 mb-8 transition-colors"
@@ -66,19 +60,16 @@ function PostDetail() {
           Back to Posts
         </Link>
 
-        {/* Kategoriya Badge'i */}
         <span
           className={`inline-block text-xs font-bold px-3 py-1.5 rounded-full mb-4 tracking-wide ${categoryStyles[post.category] || "bg-gray-100 text-gray-800"}`}
         >
           {post.category}
         </span>
 
-        {/* Katta Bosh Sarlavha (Title) */}
         <h1 className="text-3xl md:text-[44px] font-extrabold text-[#111827] leading-tight md:leading-13 tracking-tight mb-6">
           {post.title}
         </h1>
 
-        {/* Muallif va Sana qismi */}
         <div className="flex items-center gap-6 text-sm text-gray-500 mb-8 pb-8 border-b border-gray-100">
           <div className="flex items-center gap-2">
             <svg
@@ -114,7 +105,6 @@ function PostDetail() {
           </div>
         </div>
 
-        {/* Asosiy Katta Rasm */}
         <div className="rounded-6 overflow-hidden shadow-sm mb-10 bg-gray-50 aspect-video">
           <img
             src={post.image}
@@ -123,7 +113,6 @@ function PostDetail() {
           />
         </div>
 
-        {/* Maqola Batafsil Matni (Rich Text / Typography formatida) */}
         <div className="text-[#374151] text-[17px] leading-7 space-y-6">
           <p className="text-gray-600 font-normal">
             {post.desc} The landscape of web development is constantly evolving,
@@ -183,18 +172,14 @@ function PostDetail() {
         </div>
       </div>
 
-      {/* 2. Related Posts Qismi (Pastki kulrang fonli blok) */}
       <div className="bg-[#F9FAFB] border-t border-gray-100 py-16">
         <div className="max-w-285 mx-auto px-6">
-          {/* Sarlavha */}
           <h2 className="text-2xl md:text-3xl font-bold text-[#111827] mb-10">
             Related Posts
           </h2>
 
-          {/* Grid orqali 2 ta related postni chiqarish */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-200">
             {relatedPosts.map((item) => (
-              // Avval yozgan PostCard'imizni bu yerda qayta ishlatamiz
               <PostCard key={item.id} card={item} />
             ))}
           </div>
